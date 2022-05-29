@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    table {
+      padding: 30px 30px 30px 30px;
+      background-color: lightblue;
+      border: 2px solid black;
+      line-height: 50px;
+    }
+
+    section table tr td {
+      border: 2px solid lightblue;
+      background-color: lightgray;
+    }
+  </style>
+
+  <body>
+    <section>
+      <table>
+        <tr>
+          <td colspan="2">value1</td>
+          <td colspan="2"><input type="number" name="value1" id="value1" /></td>
+        </tr>
+        <tr>
+          <td colspan="2">Value2</td>
+          <td colspan="2"><input type="number" name="value2" id="value2" /></td>
+        </tr>
+        <tr>
+          <td><button id="add" onclick="add()">Addition</button></td>
+          <td><button id="sub" onclick="sub()">Substraction</button></td>
+          <td><button id="mul" onclick="mul()">Multiply</button></td>
+          <td><button id="div" onclick="div()">Divide</button></td>
+        </tr>
+        <tr>
+          <td>Answer</td>
+          <td><input type="number" value="ans" id="ans" /></td>
+          <td><button id="clear" onclick="clear1()">clear</button></td>
+        </tr>
+      </table>
+    </section>
+
+    <script>
+      const add = function () {
+        const val1 = Number(document.getElementById("value1").value);
+        const val2 = Number(document.getElementById("value2").value);
+        const ans = val1 + val2;
+        document.getElementById("ans").value = ans;
+      };
+      const mul = function () {
+        const val1 = Number(document.getElementById("value1").value);
+        const val2 = Number(document.getElementById("value2").value);
+        const ans = val1 * val2;
+        document.getElementById("ans").value = ans;
+      };
+      const div = function () {
+        const val1 = Number(document.getElementById("value1").value);
+        const val2 = Number(document.getElementById("value2").value);
+        const ans = val1 / val2;
+        document.getElementById("ans").value = ans;
+      };
+      const sub = function () {
+        const val1 = Number(document.getElementById("value1").value);
+        const val2 = Number(document.getElementById("value2").value);
+        const ans = val1 - val2;
+        document.getElementById("ans").value = ans;
+      };
+      const clear1 = function () {
+        document.getElementById("value1").value = '';
+        document.getElementById("value2").value = '';
+        document.getElementById("ans").value = '';
+      };
+    </script>
+  </body>
+</html>
